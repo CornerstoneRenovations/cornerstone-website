@@ -57,7 +57,7 @@
   .nav-logo-img{height:64px;width:auto;transition:filter 0.3s ease,height 0.3s ease}
   nav.scrolled .nav-logo-img{height:54px}
 
-  .nav-center{display:flex;gap:32px;list-style:none;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase}
+  .nav-center{display:flex;gap:46px;list-style:none;font-size:12px;font-weight:600;letter-spacing:0.30em;text-transform:uppercase}
   .nav-center a{text-decoration:none;opacity:0.85;transition:opacity 0.2s;color:var(--navy);position:relative;padding:6px 0}
   .nav-center a:hover{opacity:1}
   .nav-center a.active{opacity:1}
@@ -189,6 +189,20 @@
   .refer-form-intro .terms strong{color:var(--ink);text-transform:uppercase;letter-spacing:0.18em;font-size:11px;font-weight:700;display:block;margin-bottom:12px}
   @media (max-width:900px){.refer-form-grid{grid-template-columns:1fr;gap:48px;padding:0 24px}}
 
+
+  /* ═══════════════════ FONT ENFORCEMENT ═══════════════════ */
+  /* Force brand fonts globally to prevent fallback to system serif */
+  body, body *{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+  h1, h2, h3, h4, h5, h6, .hero-headline, .section-headline, .product-hero h1,
+  .gallery-hero h1, .product-hero h1 em, .gallery-hero h1 em, em,
+  .hero-headline .line1, .hero-headline .line2, .hero-eyebrow,
+  .section-eyebrow, .gallery-hero-eyebrow, .product-hero-eyebrow{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;
+  }
+  /* Make sure body copy uses Inter */
+  p, li, .hero-meta, .hero-tag, .nav-center, .nav-cta, .footer-link,
+  .nav-cta-arrow{font-family:'Inter',-apple-system,sans-serif}
+  
 </style>
 </head>
 <body>
@@ -213,7 +227,7 @@
   <div class="wrap-narrow">
     <div class="page-hero-eyebrow">— Refer & Earn</div>
     <h1>Spread the word.<br><em>Earn the reward.</em></h1>
-    <p>Our greatest clients come from people like you — neighbors, friends, and past customers who trust us and share their experience.</p>
+    <p>Our greatest clients come from people like you. neighbors, friends, and past customers who trust us and share their experience.</p>
   </div>
 </section>
 
@@ -223,7 +237,7 @@
       <div class="section-eyebrow">— The Offer</div>
       <h2>Refer a neighbor.<br>Earn <em>$250.</em></h2>
       <p>Know someone whose home needs work? Send them our way. When your referral signs a project worth <strong>$5,000 or more</strong>, we'll mail you a $250 check as our way of saying thank you.</p>
-      <p class="fineprint">No limit on referrals — the more you send, the more you earn.</p>
+      <p class="fineprint">No limit on referrals. the more you send, the more you earn.</p>
     </div>
   </div>
 </section>

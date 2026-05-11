@@ -57,7 +57,7 @@
   .nav-logo-img{height:64px;width:auto;transition:filter 0.3s ease,height 0.3s ease}
   nav.scrolled .nav-logo-img{height:54px}
 
-  .nav-center{display:flex;gap:32px;list-style:none;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase}
+  .nav-center{display:flex;gap:46px;list-style:none;font-size:12px;font-weight:600;letter-spacing:0.30em;text-transform:uppercase}
   .nav-center a{text-decoration:none;opacity:0.85;transition:opacity 0.2s;color:var(--navy);position:relative;padding:6px 0}
   .nav-center a:hover{opacity:1}
   .nav-center a.active{opacity:1}
@@ -174,6 +174,20 @@
   .faq-answer strong{color:var(--ink);font-weight:600}
   @media (max-width:700px){.faq-list-inner{padding:0 24px}.faq-item summary{font-size:20px}}
 
+
+  /* ═══════════════════ FONT ENFORCEMENT ═══════════════════ */
+  /* Force brand fonts globally to prevent fallback to system serif */
+  body, body *{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+  h1, h2, h3, h4, h5, h6, .hero-headline, .section-headline, .product-hero h1,
+  .gallery-hero h1, .product-hero h1 em, .gallery-hero h1 em, em,
+  .hero-headline .line1, .hero-headline .line2, .hero-eyebrow,
+  .section-eyebrow, .gallery-hero-eyebrow, .product-hero-eyebrow{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;
+  }
+  /* Make sure body copy uses Inter */
+  p, li, .hero-meta, .hero-tag, .nav-center, .nav-cta, .footer-link,
+  .nav-cta-arrow{font-family:'Inter',-apple-system,sans-serif}
+  
 </style>
 </head>
 <body>

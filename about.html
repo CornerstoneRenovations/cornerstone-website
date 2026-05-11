@@ -203,6 +203,20 @@
   .area-list li::before{content:"—";position:absolute;left:0;color:var(--navy)}
   @media (max-width:900px){.about-area-grid{grid-template-columns:1fr;gap:32px}}
 
+
+  /* ═══════════════════ FONT ENFORCEMENT ═══════════════════ */
+  /* Force brand fonts globally to prevent fallback to system serif */
+  body, body *{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+  h1, h2, h3, h4, h5, h6, .hero-headline, .section-headline, .product-hero h1,
+  .gallery-hero h1, .product-hero h1 em, .gallery-hero h1 em, em,
+  .hero-headline .line1, .hero-headline .line2, .hero-eyebrow,
+  .section-eyebrow, .gallery-hero-eyebrow, .product-hero-eyebrow{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;
+  }
+  /* Make sure body copy uses Inter */
+  p, li, .hero-meta, .hero-tag, .nav-center, .nav-cta, .footer-link,
+  .nav-cta-arrow{font-family:'Inter',-apple-system,sans-serif}
+  
 </style>
 </head>
 <body>
@@ -289,7 +303,7 @@
     <div class="partners-badge-grid reveal">
       <div class="partner-badge"><div class="partner-badge-name">GAF</div><div class="partner-badge-desc">Certified Contractor</div></div>
       <div class="partner-badge"><div class="partner-badge-name">James Hardie</div><div class="partner-badge-desc">ALLIANCE Member</div></div>
-      <div class="partner-badge"><div class="partner-badge-name">Andersen</div><div class="partner-badge-desc">Certified Installer</div></div>
+      <div class="partner-badge"><div class="partner-badge-name">Andersen</div><div class="partner-badge-desc">Installer</div></div>
       <div class="partner-badge"><div class="partner-badge-name">Premier</div><div class="partner-badge-desc">Gutter Cover Partner</div></div>
       <div class="partner-badge"><div class="partner-badge-name">ABC Supply</div><div class="partner-badge-desc">Trade Network</div></div>
       <div class="partner-badge"><div class="partner-badge-name">Oregon CCB</div><div class="partner-badge-desc">License #261422</div></div>

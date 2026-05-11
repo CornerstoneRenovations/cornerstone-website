@@ -57,7 +57,7 @@
   .nav-logo-img{height:64px;width:auto;transition:filter 0.3s ease,height 0.3s ease}
   nav.scrolled .nav-logo-img{height:54px}
 
-  .nav-center{display:flex;gap:32px;list-style:none;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase}
+  .nav-center{display:flex;gap:46px;list-style:none;font-size:12px;font-weight:600;letter-spacing:0.30em;text-transform:uppercase}
   .nav-center a{text-decoration:none;opacity:0.85;transition:opacity 0.2s;color:var(--navy);position:relative;padding:6px 0}
   .nav-center a:hover{opacity:1}
   .nav-center a.active{opacity:1}
@@ -175,6 +175,15 @@
   .quote-promises li strong{color:var(--ink);font-weight:600}
   @media (max-width:900px){.quote-grid{grid-template-columns:1fr;gap:48px;padding:0 24px}.quote-intro{position:static}}
 
+
+  /* ═══════════════════ FONT ENFORCEMENT ═══════════════════ */
+  body, body *{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+  h1, h2, h3, h4, h5, h6, .hero-headline, .section-headline, .product-hero h1,
+  .gallery-hero h1, em, .hero-headline .line1, .hero-headline .line2,
+  .hero-eyebrow, .section-eyebrow, .gallery-hero-eyebrow{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;
+  }
+  
 </style>
 </head>
 <body>
@@ -208,13 +217,13 @@
     <div class="quote-intro reveal">
       <div class="section-eyebrow">— What to Expect</div>
       <h2>Honest answers. <em>Itemized pricing.</em></h2>
-      <p class="lead">"A free in-home consultation, expert recommendations, and a detailed proposal — all before you decide anything."</p>
+      <p class="lead">"A free in-home consultation, expert recommendations, and a detailed proposal. all before you decide anything."</p>
       <ul class="quote-promises">
         <li><span class="check">→</span><span><strong>Free in-home consultation</strong> at a time that works for you</span></li>
         <li><span class="check">→</span><span><strong>Expert recommendations</strong> and honest answers about your project</span></li>
         <li><span class="check">→</span><span><strong>Detailed, itemized proposal</strong> — no surprise math</span></li>
         <li><span class="check">→</span><span><strong>Flexible financing options</strong> to fit any budget</span></li>
-        <li><span class="check">→</span><span><strong>Insurance claims help,</strong> if it's a covered event</span></li>
+        
         <li><span class="check">→</span><span><strong>A locally family-owned crew</strong> you can actually call</span></li>
       </ul>
     </div>
@@ -287,7 +296,7 @@
 
     <div class="form-success" id="formSuccess">
       <h3>Thanks — <em>we'll be in touch.</em></h3>
-      <p>Your request is on its way to our inbox. Expect to hear from us shortly to schedule your free consultation. For urgent issues — active leaks, storm damage — call us directly at (503) 502-5613.</p>
+      <p>Your request is on its way to our inbox. Expect to hear from us shortly to schedule your free consultation. For urgent issues. active leaks, storm damage. call us directly at (503) 502-5613.</p>
     </div>
   </div>
 </section>

@@ -245,7 +245,21 @@
   @media (max-width:920px){.home-hero{min-height:640px;height:auto;padding:140px 0 80px}.hero-text-shadow{width:100%;height:80%;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0) 100%)}.hero-text-block{position:relative;left:auto;top:auto;padding:0 28px;margin:auto auto 28px 0;max-width:100%}.hero-headline{font-size:clamp(40px,9vw,62px)}.hero-headline .line1{line-height:0.95}.hero-eyebrow{font-size:12px;margin-bottom:16px}.hero-sub{font-size:15px;margin-top:24px}.hero-cta{margin-top:30px;padding:16px 30px;font-size:11px;letter-spacing:0.18em}.hero-meta{position:relative;left:auto;bottom:auto;padding:0 28px;margin-top:32px;font-size:9.5px;letter-spacing:0.16em}}
 
   
-  </style>
+  
+  /* ═══════════════════ FONT ENFORCEMENT ═══════════════════ */
+  /* Force brand fonts globally to prevent fallback to system serif */
+  body, body *{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+  h1, h2, h3, h4, h5, h6, .hero-headline, .section-headline, .product-hero h1,
+  .gallery-hero h1, .product-hero h1 em, .gallery-hero h1 em, em,
+  .hero-headline .line1, .hero-headline .line2, .hero-eyebrow,
+  .section-eyebrow, .gallery-hero-eyebrow, .product-hero-eyebrow{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;
+  }
+  /* Make sure body copy uses Inter */
+  p, li, .hero-meta, .hero-tag, .nav-center, .nav-cta, .footer-link,
+  .nav-cta-arrow{font-family:'Inter',-apple-system,sans-serif}
+  
+</style>
 </head>
 <body>
 <nav id="nav" class="dark-bg">
@@ -277,7 +291,7 @@
         <span class="line1">The Cornerstone</span>
         <span class="line2">of <em>every great home.</em></span>
       </h1>
-      <p class="hero-sub">Roofing, siding, windows, gutters, and decking — built to last by Portland's premier exterior renovation team.</p>
+      <p class="hero-sub">Roofing, siding, windows, gutters, and decking. built to last by Portland's premier exterior renovation team.</p>
       <a href="quote.html" class="hero-cta">Get a Quote <span class="hero-cta-arrow">→</span></a>
     </div>
     <div class="hero-meta"><span>Licensed</span><span class="hero-meta-dot"></span><span>Bonded</span><span class="hero-meta-dot"></span><span>Insured</span><span class="hero-meta-dot"></span><span>CCB #261422</span><span class="hero-meta-dot"></span><span>Portland Metro</span></div>
@@ -292,8 +306,8 @@
       <div class="section-eyebrow">— § 01 / Our Approach</div>
       <h2 class="section-headline">Built on a <em>higher standard.</em></h2>
       <p>At <strong>Cornerstone,</strong> we don't believe in shortcuts. And we don't believe cost should stop you from taking care of your home.</p>
-<p>We specialize in doing the job <em>right the first time</em> — using proven installation methods and long-lasting products built for real protection. Every project is designed to <em>increase your home's value</em> and give you peace of mind.</p>
-<p>As a locally owned company, our name is on every job — and that means we stand behind our work, and work with you to <em>make the project make sense.</em></p>
+<p>We specialize in doing the job <em>right the first time</em>. using proven installation methods and long-lasting products built for real protection. Every project is designed to <em>increase your home's value</em> and give you peace of mind.</p>
+<p>As a locally owned company, our name is on every job. and that means we stand behind our work, and work with you to <em>make the project make sense.</em></p>
       <a href="about.html" class="section-link">Read our story <span class="section-link-arrow">→</span></a>
     </div>
   </div>
@@ -307,7 +321,7 @@
         <h2 class="section-headline">Five disciplines.<br><em>One trusted team.</em></h2>
       </div>
       <div class="reveal">
-        <p class="section-body">From the ridgeline down to the deck boards, we handle every part of your home's exterior — backed by industry-leading manufacturers.</p>
+        <p class="section-body">From the ridgeline down to the deck boards, we handle every part of your home's exterior. backed by industry-leading manufacturers.</p>
         <a href="services.html" class="section-link">Explore our services <span class="section-link-arrow">→</span></a>
       </div>
     </div>

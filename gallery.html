@@ -215,6 +215,20 @@
   .gallery-final-cta .cta-btn:hover{background:var(--stone);color:var(--navy-deep)}
   .gallery-final-cta .cta-btn-arrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px}
 
+
+  /* ═══════════════════ FONT ENFORCEMENT ═══════════════════ */
+  /* Force brand fonts globally to prevent fallback to system serif */
+  body, body *{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+  h1, h2, h3, h4, h5, h6, .hero-headline, .section-headline, .product-hero h1,
+  .gallery-hero h1, .product-hero h1 em, .gallery-hero h1 em, em,
+  .hero-headline .line1, .hero-headline .line2, .hero-eyebrow,
+  .section-eyebrow, .gallery-hero-eyebrow, .product-hero-eyebrow{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;
+  }
+  /* Make sure body copy uses Inter */
+  p, li, .hero-meta, .hero-tag, .nav-center, .nav-cta, .footer-link,
+  .nav-cta-arrow{font-family:'Inter',-apple-system,sans-serif}
+  
 </style>
 </head>
 <body>

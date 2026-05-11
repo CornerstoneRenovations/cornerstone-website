@@ -57,7 +57,7 @@
   .nav-logo-img{height:64px;width:auto;transition:filter 0.3s ease,height 0.3s ease}
   nav.scrolled .nav-logo-img{height:54px}
 
-  .nav-center{display:flex;gap:32px;list-style:none;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase}
+  .nav-center{display:flex;gap:46px;list-style:none;font-size:12px;font-weight:600;letter-spacing:0.30em;text-transform:uppercase}
   .nav-center a{text-decoration:none;opacity:0.85;transition:opacity 0.2s;color:var(--navy);position:relative;padding:6px 0}
   .nav-center a:hover{opacity:1}
   .nav-center a.active{opacity:1}
@@ -173,6 +173,20 @@
   .process-step-text p strong{color:var(--ink);font-weight:600}
   @media (max-width:900px){.process-step-grid{grid-template-columns:1fr;gap:24px;padding:0 24px}.process-step-num{position:static;font-size:120px}}
 
+
+  /* ═══════════════════ FONT ENFORCEMENT ═══════════════════ */
+  /* Force brand fonts globally to prevent fallback to system serif */
+  body, body *{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+  h1, h2, h3, h4, h5, h6, .hero-headline, .section-headline, .product-hero h1,
+  .gallery-hero h1, .product-hero h1 em, .gallery-hero h1 em, em,
+  .hero-headline .line1, .hero-headline .line2, .hero-eyebrow,
+  .section-eyebrow, .gallery-hero-eyebrow, .product-hero-eyebrow{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;
+  }
+  /* Make sure body copy uses Inter */
+  p, li, .hero-meta, .hero-tag, .nav-center, .nav-cta, .footer-link,
+  .nav-cta-arrow{font-family:'Inter',-apple-system,sans-serif}
+  
 </style>
 </head>
 <body>
@@ -207,7 +221,7 @@
     <div class="process-step-text reveal">
       <h2>Free in-home <em>consultation.</em></h2>
       <p>We schedule a time that works for you, walk your home together, and assess your project from every angle.</p>
-      <p>You'll get <strong>expert recommendations, honest answers,</strong> and a complete picture of what your home needs — and what it doesn't.</p>
+      <p>You'll get <strong>expert recommendations, honest answers,</strong> and a complete picture of what your home needs. and what it doesn't.</p>
     </div>
   </div>
 </section>
@@ -217,7 +231,7 @@
     <div class="process-step-num reveal">02</div>
     <div class="process-step-text reveal">
       <h2>Custom <em>proposal.</em></h2>
-      <p>We present a detailed proposal tailored to your home, your goals, and your budget — including financing options, warranty details, and material choices.</p>
+      <p>We present a detailed proposal tailored to your home, your goals, and your budget. including financing options, warranty details, and material choices.</p>
       <p><strong>Everything you need</strong> to make a confident decision about one of the biggest investments your home will see.</p>
     </div>
   </div>
