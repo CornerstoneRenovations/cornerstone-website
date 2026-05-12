@@ -351,56 +351,37 @@
 
   
   /* ─── ABSOLUTE UNIFORMITY (added) ─── */
-  /* Kill all italics, flatten weight contrast, unify color. */
+  /* Layer 1: Force one font + no italics on EVERYTHING. */
   *, *::before, *::after {
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
     font-style: normal !important;
   }
-  /* Body copy darker + heavier so it matches headlines */
-  body, p, li, a, span, div, label, small, blockquote, figcaption, time,
-  .hero-eyebrow, .hero-sub, .hero-meta,
+  /* Layer 2: Bold + dark body copy — ONLY in specific light-background containers.
+     We do NOT touch hero, footer, final-cta, or nav — those manage their own colors. */
   .page-hero p, .page-hero-eyebrow,
   .section-eyebrow,
   .cert-strip-eyebrow, .cert-strip-sub-eyebrow,
-  .final-cta-eyebrow,
-  .footer-brand p, .footer-brand-tag,
-  .footer-col ul a, .footer-col ul li, .footer-bottom,
-  .faq-answer,
-  .product-hero p, .product-hero-eyebrow,
+  .faq-answer, .faq-item summary,
+  .trade-row .num, .value-card .num,
+  .home-gallery-head h2, .gallery-card h3,
+  .product-hero-eyebrow, .product-hero p,
   .gallery-hero-eyebrow, .gallery-hero p,
-  .trade-row .num, .value-card .num {
+  .quote-form label, .quote-form p,
+  main p, main li:not(.faq-item), main label, main small {
     color: var(--ink) !important;
     font-weight: 500 !important;
     opacity: 1 !important;
   }
-  /* Keep dark sections legible (white text on navy backgrounds) */
-  footer *, .final-cta *, nav.dark-bg .nav-center a, nav.dark-bg .nav-cta,
-  .home-hero h1, .home-hero p, .hero-headline, .hero-eyebrow, .hero-sub, .hero-meta,
-  .hero-headline .line1, .hero-headline .line2 {
-    color: inherit !important;
-  }
-  /* Re-whiten elements that sit on dark backgrounds */
-  footer, footer p, footer a, footer li, footer h4, footer span,
-  .footer-brand p, .footer-brand-tag, .footer-brand-logo,
-  .footer-col h4, .footer-col ul a, .footer-col ul li, .footer-bottom {
-    color: rgba(255,255,255,0.85) !important;
-  }
-  footer h4, .footer-brand-logo {
-    color: #ffffff !important;
-  }
-  /* Hero text stays cream/white on the photo */
-  .home-hero h1, .hero-headline, .hero-headline .line1, .hero-headline .line2 {
-    color: #f7f1e3 !important;
-  }
-  .hero-eyebrow, .hero-sub, .hero-meta {
-    color: #f5ede0 !important;
-  }
-  /* Final CTA (navy section) stays white */
-  .final-cta, .final-cta *, .final-cta h2, .final-cta p, .final-cta-eyebrow {
-    color: #ffffff !important;
-  }
-  .final-cta-eyebrow {
-    color: rgba(255,255,255,0.7) !important;
+
+  /* ─── LADDER HERO HEADLINE (added) ─── */
+  /* Each phrase of the hero headline on its own line, anchored to left edge. */
+  @media (max-width:920px){
+    .hero-headline{font-size:clamp(36px,9.5vw,52px) !important;line-height:1.0 !important;text-align:left;letter-spacing:-0.02em}
+    .hero-headline .line1,
+    .hero-headline .line2{display:block;line-height:1.0 !important;margin:0 !important}
+    .hero-headline .line2{margin-top:0.15em !important}
+    /* Each word/phrase wrapped in .word becomes its own line in the ladder */
+    .hero-headline .word{display:block;line-height:1.05;margin:0}
   }
 
   </style>
@@ -448,8 +429,14 @@
     <div class="hero-text-block">
       <div class="hero-eyebrow">Portland, Oregon · Exterior Renovations</div>
       <h1 class="hero-headline" style="font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-weight:500;font-style:normal;">
-        <span style="display:block;font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-weight:500;font-style:normal;">The Cornerstone</span>
-        <span style="display:block;font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-weight:500;font-style:normal;">of every great home.</span>
+        <span class="line1" style="display:block;font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-weight:500;font-style:normal;">
+          <span class="word">The</span>
+          <span class="word">Cornerstone</span>
+        </span>
+        <span class="line2" style="display:block;font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-weight:500;font-style:normal;">
+          <span class="word">of every</span>
+          <span class="word">great home.</span>
+        </span>
       </h1>
       <p class="hero-sub">Roofing, siding, windows, gutters, and decking, built to last by Portland's premier exterior renovation team.</p>
       <a href="quote.html" class="hero-cta">Get a Quote <span class="hero-cta-arrow">→</span></a>
