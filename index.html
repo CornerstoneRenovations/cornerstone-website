@@ -243,7 +243,7 @@
   .hero-cta-arrow{font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-style:italic;font-size:20px;line-height:1}
   .hero-meta{position:absolute;left:11%;bottom:42px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:10.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#f5ede0;opacity:0.7;z-index:2}
   .hero-meta-dot{width:3px;height:3px;background:currentColor;border-radius:50%;display:inline-block;flex-shrink:0}
-  @media (max-width:920px){.home-hero{min-height:100vh;min-height:100svh;height:100vh;height:100svh;padding:0;display:block;position:relative}.hero-text-shadow{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:linear-gradient(to top,rgba(0,0,0,0.60) 0%,rgba(0,0,0,0.35) 40%,rgba(0,0,0,0.20) 75%,rgba(0,0,0,0.15) 100%);z-index:1}.home-hero-content{position:absolute;inset:0;z-index:2;width:100%;height:100%;padding:0;display:flex;flex-direction:column;justify-content:space-between}.hero-text-block{position:relative;left:auto;top:auto;transform:none;padding:130px 28px 40px;margin:0;max-width:100%;z-index:2;display:flex;flex-direction:column;height:100%;width:100%;box-sizing:border-box}.hero-headline{font-size:clamp(40px,10.5vw,56px);line-height:1.0;text-shadow:0 2px 14px rgba(0,0,0,0.85),0 1px 6px rgba(0,0,0,0.6);margin-top:32px;flex:1;display:flex;flex-direction:column;justify-content:center}.hero-headline .line1{line-height:1.0;display:block}.hero-headline .line2{margin-top:0.12em;line-height:1.06;display:block}.hero-eyebrow{font-size:11px;margin-bottom:0;letter-spacing:0.06em;text-shadow:0 1px 8px rgba(0,0,0,0.9),0 1px 3px rgba(0,0,0,0.7);opacity:0.95}.hero-sub{display:none}.hero-cta{margin-top:0;align-self:flex-start;padding:16px 30px;font-size:11px;letter-spacing:0.18em}.hero-meta{display:none}}
+  @media (max-width:920px){.home-hero{min-height:100vh;min-height:100svh;height:100vh;height:100svh;padding:0;display:block;position:relative}.hero-text-shadow{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:linear-gradient(to top,rgba(0,0,0,0.60) 0%,rgba(0,0,0,0.35) 40%,rgba(0,0,0,0.20) 75%,rgba(0,0,0,0.15) 100%);z-index:1}.home-hero-content{position:absolute;inset:0;z-index:2;width:100%;height:100%;padding:0;display:flex;flex-direction:column;justify-content:space-between}.hero-text-block{position:relative;left:auto;top:auto;transform:none;padding:130px 28px 40px;margin:0;max-width:100%;z-index:2;display:flex;flex-direction:column;justify-content:space-between;height:100%;width:100%;box-sizing:border-box}.hero-headline{font-size:clamp(38px,9.5vw,50px);line-height:0.95;text-shadow:0 2px 14px rgba(0,0,0,0.85),0 1px 6px rgba(0,0,0,0.6);margin:0}.hero-headline .line1{line-height:0.95;display:block}.hero-headline .line2{margin-top:0.05em;line-height:0.95;display:block}.hero-eyebrow{font-size:11px;margin-bottom:0;letter-spacing:0.06em;text-shadow:0 1px 8px rgba(0,0,0,0.9),0 1px 3px rgba(0,0,0,0.7);opacity:0.95}.hero-sub{display:none}.hero-cta{margin-top:0;align-self:flex-start;padding:16px 30px;font-size:11px;letter-spacing:0.18em}.hero-meta{display:none}}
 
   
   
@@ -349,6 +349,60 @@
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
   }
 
+  
+  /* ─── ABSOLUTE UNIFORMITY (added) ─── */
+  /* Kill all italics, flatten weight contrast, unify color. */
+  *, *::before, *::after {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
+    font-style: normal !important;
+  }
+  /* Body copy darker + heavier so it matches headlines */
+  body, p, li, a, span, div, label, small, blockquote, figcaption, time,
+  .hero-eyebrow, .hero-sub, .hero-meta,
+  .page-hero p, .page-hero-eyebrow,
+  .section-eyebrow,
+  .cert-strip-eyebrow, .cert-strip-sub-eyebrow,
+  .final-cta-eyebrow,
+  .footer-brand p, .footer-brand-tag,
+  .footer-col ul a, .footer-col ul li, .footer-bottom,
+  .faq-answer,
+  .product-hero p, .product-hero-eyebrow,
+  .gallery-hero-eyebrow, .gallery-hero p,
+  .trade-row .num, .value-card .num {
+    color: var(--ink) !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+  }
+  /* Keep dark sections legible (white text on navy backgrounds) */
+  footer *, .final-cta *, nav.dark-bg .nav-center a, nav.dark-bg .nav-cta,
+  .home-hero h1, .home-hero p, .hero-headline, .hero-eyebrow, .hero-sub, .hero-meta,
+  .hero-headline .line1, .hero-headline .line2 {
+    color: inherit !important;
+  }
+  /* Re-whiten elements that sit on dark backgrounds */
+  footer, footer p, footer a, footer li, footer h4, footer span,
+  .footer-brand p, .footer-brand-tag, .footer-brand-logo,
+  .footer-col h4, .footer-col ul a, .footer-col ul li, .footer-bottom {
+    color: rgba(255,255,255,0.85) !important;
+  }
+  footer h4, .footer-brand-logo {
+    color: #ffffff !important;
+  }
+  /* Hero text stays cream/white on the photo */
+  .home-hero h1, .hero-headline, .hero-headline .line1, .hero-headline .line2 {
+    color: #f7f1e3 !important;
+  }
+  .hero-eyebrow, .hero-sub, .hero-meta {
+    color: #f5ede0 !important;
+  }
+  /* Final CTA (navy section) stays white */
+  .final-cta, .final-cta *, .final-cta h2, .final-cta p, .final-cta-eyebrow {
+    color: #ffffff !important;
+  }
+  .final-cta-eyebrow {
+    color: rgba(255,255,255,0.7) !important;
+  }
+
   </style>
 </head>
 <body>
@@ -397,7 +451,7 @@
         <span style="display:block;font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-weight:500;font-style:normal;">The Cornerstone</span>
         <span style="display:block;font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;font-weight:500;font-style:normal;">of every great home.</span>
       </h1>
-      <p class="hero-sub">Roofing, siding, windows, gutters, and decking. built to last by Portland's premier exterior renovation team.</p>
+      <p class="hero-sub">Roofing, siding, windows, gutters, and decking, built to last by Portland's premier exterior renovation team.</p>
       <a href="quote.html" class="hero-cta">Get a Quote <span class="hero-cta-arrow">→</span></a>
     </div>
     <div class="hero-meta"><span>Licensed</span><span class="hero-meta-dot"></span><span>Bonded</span><span class="hero-meta-dot"></span><span>Insured</span><span class="hero-meta-dot"></span><span>CCB #261422</span><span class="hero-meta-dot"></span><span>Portland Metro</span></div>
@@ -412,8 +466,8 @@
       <div class="section-eyebrow">§ 01 / Our Approach</div>
       <h2 class="section-headline">Built on a <em>higher standard.</em></h2>
       <p>At <strong>Cornerstone,</strong> we don't believe in shortcuts, and we don't believe cost should stop you from taking care of your home.</p>
-<p>We specialize in doing the job right the first time. using proven installation methods and long-lasting products built for real protection. Every project is designed to increase your home's value and give you peace of mind.</p>
-<p>As a locally owned company, our name is on every job. and that means we stand behind our work, and work with you to make the project make sense.</p>
+<p>We specialize in doing the job right the first time, using proven installation methods and long-lasting products built for real protection. Every project is designed to increase your home's value and give you peace of mind.</p>
+<p>As a locally owned company, our name is on every job, and that means we stand behind our work, and work with you to make the project make sense.</p>
       <a href="about.html" class="section-link">Read our story <span class="section-link-arrow">→</span></a>
     </div>
   </div>
@@ -427,7 +481,7 @@
         <h2 class="section-headline">Five disciplines.<br><em>One trusted team.</em></h2>
       </div>
       <div class="reveal">
-        <p class="section-body">From the ridgeline down to the deck boards, we handle every part of your home's exterior. backed by industry-leading manufacturers.</p>
+        <p class="section-body">From the ridgeline down to the deck boards, we handle every part of your home's exterior, backed by industry-leading manufacturers.</p>
         <a href="services.html" class="section-link">Explore our services <span class="section-link-arrow">→</span></a>
       </div>
     </div>

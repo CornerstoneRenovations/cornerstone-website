@@ -265,6 +265,60 @@
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
   }
 
+  
+  /* ─── ABSOLUTE UNIFORMITY (added) ─── */
+  /* Kill all italics, flatten weight contrast, unify color. */
+  *, *::before, *::after {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
+    font-style: normal !important;
+  }
+  /* Body copy darker + heavier so it matches headlines */
+  body, p, li, a, span, div, label, small, blockquote, figcaption, time,
+  .hero-eyebrow, .hero-sub, .hero-meta,
+  .page-hero p, .page-hero-eyebrow,
+  .section-eyebrow,
+  .cert-strip-eyebrow, .cert-strip-sub-eyebrow,
+  .final-cta-eyebrow,
+  .footer-brand p, .footer-brand-tag,
+  .footer-col ul a, .footer-col ul li, .footer-bottom,
+  .faq-answer,
+  .product-hero p, .product-hero-eyebrow,
+  .gallery-hero-eyebrow, .gallery-hero p,
+  .trade-row .num, .value-card .num {
+    color: var(--ink) !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+  }
+  /* Keep dark sections legible (white text on navy backgrounds) */
+  footer *, .final-cta *, nav.dark-bg .nav-center a, nav.dark-bg .nav-cta,
+  .home-hero h1, .home-hero p, .hero-headline, .hero-eyebrow, .hero-sub, .hero-meta,
+  .hero-headline .line1, .hero-headline .line2 {
+    color: inherit !important;
+  }
+  /* Re-whiten elements that sit on dark backgrounds */
+  footer, footer p, footer a, footer li, footer h4, footer span,
+  .footer-brand p, .footer-brand-tag, .footer-brand-logo,
+  .footer-col h4, .footer-col ul a, .footer-col ul li, .footer-bottom {
+    color: rgba(255,255,255,0.85) !important;
+  }
+  footer h4, .footer-brand-logo {
+    color: #ffffff !important;
+  }
+  /* Hero text stays cream/white on the photo */
+  .home-hero h1, .hero-headline, .hero-headline .line1, .hero-headline .line2 {
+    color: #f7f1e3 !important;
+  }
+  .hero-eyebrow, .hero-sub, .hero-meta {
+    color: #f5ede0 !important;
+  }
+  /* Final CTA (navy section) stays white */
+  .final-cta, .final-cta *, .final-cta h2, .final-cta p, .final-cta-eyebrow {
+    color: #ffffff !important;
+  }
+  .final-cta-eyebrow {
+    color: rgba(255,255,255,0.7) !important;
+  }
+
   </style>
 </head>
 <body>
@@ -305,7 +359,7 @@
   <div class="wrap-narrow">
     <div class="page-hero-eyebrow">Refer & Earn</div>
     <h1>Spread the word.<br><em>Earn the reward.</em></h1>
-    <p>Our greatest clients come from people like you. neighbors, friends, and past customers who trust us and share their experience.</p>
+    <p>Our greatest clients come from people like you, neighbors, friends, and past customers who trust us and share their experience.</p>
   </div>
 </section>
 
@@ -315,7 +369,7 @@
       <div class="section-eyebrow">The Offer</div>
       <h2>Refer a neighbor.<br>Earn <em>$250.</em></h2>
       <p>Know someone whose home needs work? Send them our way. When your referral signs a project worth <strong>$5,000 or more</strong>, we'll mail you a $250 check as our way of saying thank you.</p>
-      <p class="fineprint">No limit on referrals. the more you send, the more you earn.</p>
+      <p class="fineprint">No limit on referrals, the more you send, the more you earn.</p>
     </div>
   </div>
 </section>
