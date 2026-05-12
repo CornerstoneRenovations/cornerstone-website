@@ -331,26 +331,36 @@
   }
   /* ─── DESKTOP NAV + CTAs — BIGGER & BOLDER (added) ─── */
   @media (min-width:921px){
+    /* Pull logo and Contact Us closer to the edges */
+    .nav-inner{
+      padding:0 32px !important;
+      gap:20px !important;
+      max-width:1600px !important;
+    }
     /* Top nav menu links (About, Services, Process, FAQ, etc.) */
     .nav-center{
-      font-size:19px !important;
+      font-size:17px !important;
       font-weight:700 !important;
-      letter-spacing:0.24em !important;
-      gap:60px !important;
+      letter-spacing:0.20em !important;
+      gap:42px !important;
+      white-space:nowrap !important;
     }
+    .nav-center li{white-space:nowrap !important}
     .nav-center a{
       opacity:0.95 !important;
       padding:10px 0 !important;
+      white-space:nowrap !important;
     }
     /* Contact Us button in nav */
     .nav-cta{
-      padding:24px 52px !important;
-      font-size:19px !important;
+      padding:22px 44px !important;
+      font-size:17px !important;
       font-weight:800 !important;
-      letter-spacing:0.20em !important;
-      gap:16px !important;
+      letter-spacing:0.18em !important;
+      gap:14px !important;
+      white-space:nowrap !important;
     }
-    .nav-cta-arrow{font-size:28px !important}
+    .nav-cta-arrow{font-size:25px !important}
 
     /* Get a Quote hero button — biggest CTA on the page, NO white border */
     .hero-cta{
