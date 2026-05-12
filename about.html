@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
   :root {
@@ -217,7 +217,35 @@
   p, li, .hero-meta, .hero-tag, .nav-center, .nav-cta, .footer-link,
   .nav-cta-arrow{font-family:'Inter',-apple-system,sans-serif}
   
-</style>
+
+  /* ═══════════ MOBILE HAMBURGER MENU (added) ═══════════ */
+  .nav-hamburger{display:none;background:none;border:none;font-size:28px;line-height:1;color:var(--navy);cursor:pointer;padding:8px 12px;margin-left:auto;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+  nav.dark-bg .nav-hamburger{color:#fff}
+  nav.scrolled.dark-bg .nav-hamburger{color:var(--navy)}
+  .mobile-menu-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--paper);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity 0.28s ease,visibility 0.28s ease}
+  .mobile-menu-overlay.open{opacity:1;visibility:visible}
+  .mobile-menu-close{position:absolute;top:22px;right:22px;background:none;border:none;font-size:34px;line-height:1;color:var(--navy);cursor:pointer;padding:8px 14px;-webkit-tap-highlight-color:transparent}
+  .mobile-menu-overlay ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;text-align:center}
+  .mobile-menu-overlay ul a{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;color:var(--navy);text-decoration:none;letter-spacing:-0.01em;display:inline-block;padding:6px 0}
+  .mobile-menu-overlay ul a.mobile-cta{margin-top:14px;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;background:var(--navy);color:#fff;padding:16px 34px;border:1px solid var(--navy)}
+  body.menu-open{overflow:hidden}
+
+  @media (max-width:920px){
+    .nav-hamburger{display:inline-flex;align-items:center;justify-content:center}
+    /* keep nav-center hidden on mobile (already done by base styles); nothing else to add for nav */
+  }
+  @media (min-width:921px){
+    .mobile-menu-overlay{display:none}
+  }
+
+  
+  /* PAGE HERO MOBILE OVERRIDE (added) */
+  @media (max-width:920px){
+    .page-hero{padding:140px 0 60px}
+    .page-hero h1{font-size:clamp(34px,8vw,52px)}
+    .page-hero p{font-size:16px}
+  }
+  </style>
 </head>
 <body>
 <nav id="nav" class="">
@@ -234,8 +262,23 @@
       <li><a href="gallery.html">Gallery</a></li>
     </ul>
     <a href="quote.html" class="nav-cta">Contact Us <span class="nav-cta-arrow">→</span></a>
+    <button class="nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
   </div>
 </nav>
+
+<div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <button class="mobile-menu-close" type="button" aria-label="Close menu">×</button>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="refer.html">Refer & Earn</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="quote.html" class="mobile-cta">Contact Us</a></li>
+  </ul>
+</div>
+
 
 <section class="page-hero">
   <div class="wrap-narrow">
@@ -432,5 +475,21 @@
   }
 </script>
 <script>document.getElementById('nav').dataset.darkInitial = 'false';</script>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var overlay = document.getElementById('mobile-menu');
+  if(!btn || !overlay) return;
+  var closeBtn = overlay.querySelector('.mobile-menu-close');
+  var links = overlay.querySelectorAll('a');
+  function open(){overlay.classList.add('open');document.body.classList.add('menu-open');btn.setAttribute('aria-expanded','true');}
+  function close(){overlay.classList.remove('open');document.body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');}
+  btn.addEventListener('click', open);
+  if(closeBtn) closeBtn.addEventListener('click', close);
+  links.forEach(function(a){a.addEventListener('click', close);});
+  document.addEventListener('keydown', function(e){if(e.key==='Escape' && overlay.classList.contains('open')) close();});
+})();
+</script>
+
 </body>
 </html>
