@@ -351,39 +351,20 @@
 
   
   /* ─── ABSOLUTE UNIFORMITY (added) ─── */
-  /* Layer 1: Force one font + no italics on EVERYTHING. */
+  /* One font + no italics everywhere. Colors are left to the original design. */
   *, *::before, *::after {
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif !important;
     font-style: normal !important;
   }
-  /* Layer 2: Bold + dark body copy — ONLY in specific light-background containers.
-     We do NOT touch hero, footer, final-cta, or nav — those manage their own colors. */
-  .page-hero p, .page-hero-eyebrow,
-  .section-eyebrow,
-  .cert-strip-eyebrow, .cert-strip-sub-eyebrow,
-  .faq-answer, .faq-item summary,
-  .trade-row .num, .value-card .num,
-  .home-gallery-head h2, .gallery-card h3,
-  .product-hero-eyebrow, .product-hero p,
-  .gallery-hero-eyebrow, .gallery-hero p,
-  .quote-form label, .quote-form p,
-  main p, main li:not(.faq-item), main label, main small {
-    color: var(--ink) !important;
-    font-weight: 500 !important;
-    opacity: 1 !important;
-  }
 
   /* ─── LADDER HERO HEADLINE (added) ─── */
-  /* Each phrase of the hero headline on its own line, anchored to left edge. */
   @media (max-width:920px){
     .hero-headline{font-size:clamp(36px,9.5vw,52px) !important;line-height:1.0 !important;text-align:left;letter-spacing:-0.02em}
     .hero-headline .line1,
     .hero-headline .line2{display:block;line-height:1.0 !important;margin:0 !important}
     .hero-headline .line2{margin-top:0.15em !important}
-    /* Each word/phrase wrapped in .word becomes its own line in the ladder */
     .hero-headline .word{display:block;line-height:1.05;margin:0}
   }
-
   </style>
 </head>
 <body>
